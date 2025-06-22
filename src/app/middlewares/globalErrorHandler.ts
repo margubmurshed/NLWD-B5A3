@@ -2,7 +2,7 @@ import { ErrorRequestHandler } from "express";
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next): void => {
     let statusCode = 500;
-    let message = "Something went wrong!"
+    let message = err.message || "Something went wrong";
     let error = err;
 
     if(err.name === "ValidationError"){

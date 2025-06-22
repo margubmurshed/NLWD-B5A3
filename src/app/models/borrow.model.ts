@@ -13,6 +13,6 @@ const borrowSchema = new Schema<IBorrow>({
         required: true
     },
     dueDate: { type: Date, required: true }
-})
+}, {versionKey: false, timestamps: true})
 
 export const Borrow = model("borrow", borrowSchema);
