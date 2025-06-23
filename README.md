@@ -85,6 +85,14 @@ You can also use ts-node-dev for simpler process.
 | POST    | `/api/borrow/`    | Borrow a book      |
 | GET    | `/api/borrow/`    | Get borrowed books summary      |
 
+GET `/api/books/` has query parameters:
+- filter -> genre name
+- sortBy -> field name (default: createdAt)
+- sort -> asc or desc
+- limit -> valid non negative integer (default: 10)
+Without defining sort asc or descending, sortBy won't work.
+
+**Example Query: /api/books?filter=SCIENCE&sortBy=createdAt&sort=desc&limit=5**
 
 ## Developed by
 **Margub Murshed** - **Full Stack Developer**
