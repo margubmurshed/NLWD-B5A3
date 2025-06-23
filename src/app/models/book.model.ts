@@ -11,6 +11,12 @@ const bookSchema = new Schema<IBook>({
     available: {type: Boolean, default: true}
 }, {versionKey: false, timestamps: true})
 
+bookSchema.pre("save", function(){
+    if(this.copies === 0){
+        this.available = false;
+    }
+})
+
 bookSchema.statics.borrowBook = async function(bookId: string, quantity: number){
     const book = await this.findById(bookId);
 
