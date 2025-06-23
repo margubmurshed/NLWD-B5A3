@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import { bookRouter } from './app/controllers/book.controller';
 import { borrowRouter } from './app/controllers/borrow.controller';
+import 'dotenv/config';
 
 const app: Application = express();
 

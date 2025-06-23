@@ -37,6 +37,42 @@ src/
 - app.ts
 - server.ts
 
+## Setting up project locally
+
+### 1. Clone the Repository
+```bash
+    git clone https://github.com/margubmurshed/NLWD-B5A3.git
+    cd NLWD-B5A3
+```
+
+### 2. Install Dependencies
+```bash
+    npm install
+```
+
+### Configure Environment Variables
+Create a .env file in the root directory
+```ini
+    PORT=5000
+    MONGO_URI=mongodb://localhost:27017/<database_name>
+```
+Replace the MONGO_URI with your connection string.
+
+### Run the Server
+
+install typescript and nodemon globally:
+```bash
+    npm install typescript nodemon --save-dev
+```
+
+Then run these two commands in 2 separate cmd:
+```bash
+    tsc -w
+    nodemon dist/server.js
+```
+
+You can also use ts-node-dev for simpler process.
+
 ## API Endpoints
 
 | Method | Endpoint        | Description        |

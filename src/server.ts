@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 import app from './app';
 
-const PORT = 5000;
+const PORT = process.env.PORT;
 let server;
 
 async function main() {
     try {
-        await mongoose.connect(`mongodb+srv://learning_mongoose:4F94hlTcXBX9bbym@cluster0.hrq6pyr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
+        await mongoose.connect(process.env.MONGO_URI as string);
         server = app.listen(PORT, () => {
             console.log(`Library Management Server is running on port ${PORT}`)
         })
