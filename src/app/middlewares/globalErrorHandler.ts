@@ -14,6 +14,15 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next): void => {
         }
     }
 
+    if(err.name === "CastError") {
+        statusCode = 400;
+        message = "Invalid ID format";
+        error = {
+            errors: err.errors,
+            name: err.name
+        }
+    }
+
 
     res.status(statusCode).json({
         success: false,
