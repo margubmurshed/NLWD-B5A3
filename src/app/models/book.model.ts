@@ -12,9 +12,7 @@ const bookSchema = new Schema<IBook>({
 }, {versionKey: false, timestamps: true})
 
 bookSchema.pre("save", function(next){
-    if(this.copies === 0){
-        this.available = false;
-    }
+    this.available = this.copies > 0;
     next();
 })
 
